@@ -1,22 +1,34 @@
-package UNO;
+package uno;
+
+import uno.interficie.UI;
 
 public class Main{
     public static void main(String[] args) {
-        Carta c1 = new Carta(Carta.colors.Groc, 1);
-        Carta c2 = new Carta(Carta.colors.Vermell, 3);
-        Carta c3 = new Carta(Carta.colors.Blau, 6);
-        Carta c4 = new Carta(Carta.colors.Verd, 9);
+
+        Mazo mazo = new Mazo();
+        mazo.barrejar();
+
+
+        Pilo pilo = new Pilo();
 
         Jugador j1 = new Jugador("Jugador 1");
-        j1.addCarta(c1);
-        j1.addCarta(c2);
-        j1.addCarta(c3);
-        j1.addCarta(c4);
 
-        for (Carta c : j1.getCartes()) {
-            UI.mostrarCarta(c);
+
+        System.out.println("Cartas del Mazo:");
+
+        for (int i = 0; i < mazo.getCartes().size(); i++) {
+            UI.mostrarCarta(mazo.getCartes().get(i));
+        }
+
+        System.out.println("Cartas del Jugador1");
+        for (int i = 0; i < 7; i++){
+            j1.addCarta(mazo.agafarCarta());
         }
 
         UI.mostrarCartes(j1.getCartes());
+        
+        for (int i = 0; i < mazo.getCartes().size(); i++) {
+            UI.mostrarCarta(mazo.getCartes().get(i));
+        }
     }
 }

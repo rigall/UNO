@@ -1,4 +1,4 @@
-package UNO;
+package uno;
 
 import java.util.Stack;
 import java.util.Collections;
@@ -27,8 +27,8 @@ public class Mazo{
         return cartes;
     }
 
-    public void afagarCarta(Carta carta) {
-        cartes.push(carta);
+    public Carta agafarCarta() {
+        return cartes.pop();
     }
 
     public void reiniciar(Pilo pilo) {
@@ -40,7 +40,8 @@ public class Mazo{
             while (!cartasPilo.isEmpty()) {
                 cartes.push(cartasPilo.pop());
             }
-            pilo.buidarPilo(ultimaCarta);
+            pilo.getPilo().clear();
+            pilo.getPilo().push(ultimaCarta);
             barrejar();
         }
     }
