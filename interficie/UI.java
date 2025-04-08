@@ -1,4 +1,6 @@
-package UNO;
+package uno.interficie;
+
+import uno.logica.Carta;
 
 import java.util.ArrayList;
 

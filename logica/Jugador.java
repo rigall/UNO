@@ -1,4 +1,4 @@
-package uno;
+package uno.logica;
 import uno.interficie.UI;
 
 import java.util.ArrayList;
