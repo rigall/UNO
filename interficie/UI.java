@@ -58,19 +58,29 @@ public class UI{
     public static void mostrarCartes(ArrayList<Carta> cartes) {
         int quantitat = cartes.size();
         String[][] cartesPintades = new String[quantitat][];
-    
+
         for (int i = 0; i < quantitat; i++) {
             cartesPintades[i] = pintarCarta(cartes.get(i)).split("\n");
         }
-    
+
         int altura = cartesPintades[0].length;
-    
+
         for (int i = 0; i < altura; i++) {
             for (int j = 0; j < quantitat; j++) {
                 System.out.print(cartesPintades[j][i] + "  ");
             }
             System.out.println();
         }
+        System.out.print("    ");
+        for (int j = 0; j < quantitat; j++) {
+            if (j+1<10) {
+                System.out.print("(" + (j) +")          ");
+            }
+            else {
+                System.out.print("(" + (j) +")         ");
+            }
+        }
+        System.out.println();
     }
     
 }
